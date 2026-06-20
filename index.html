@@ -342,9 +342,9 @@
 <div class="hero">
   <p class="hero-eyebrow">Kumamoto Smoking-OK Izakaya Guide</p>
   <h1 class="hero-title">今夜<span>どこ行きます？</span><br>タバコ吸える居酒屋ガイド</h1>
-  <p class="hero-sub">下通・花畑町・上乃裏・駕町・並木坂エリアから、タバコが吸える居酒屋16店をピックアップ。</p>
+  <p class="hero-sub">下通・花畑町・上乃裏・駕町・並木坂エリアから、タバコが吸える居酒屋22店をピックアップ。</p>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">16</div><div class="stat-label">掲載店舗</div></div>
+    <div class="stat"><div class="stat-num">22</div><div class="stat-label">掲載店舗</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">エリア</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">ジャンル</div></div>
   </div>
@@ -375,6 +375,55 @@
 </svg> 喫煙可</button>
 </div>
 
+<!-- RANDOM -->
+<div style="background:#1e2640; padding:12px 16px; border-bottom:1px solid rgba(255,255,255,0.06); text-align:center;">
+  <button id="randomBtn" onclick="pickRandom()" style="
+    background: linear-gradient(135deg, #f0a050, #e05a78);
+    border: none; border-radius: 50px; color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px; font-weight: 700;
+    padding: 11px 28px; cursor: pointer;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 16px rgba(240,100,80,0.35);
+    transition: transform 0.15s;
+  " onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    🎲 今夜どこ行く？ランダムで決める
+  </button>
+</div>
+
+<!-- RANDOM OVERLAY -->
+<div id="randomOverlay" onclick="closeRandom()" style="
+  display:none; position:fixed; inset:0; z-index:1000;
+  background:rgba(10,14,30,0.85); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center;
+">
+  <div onclick="event.stopPropagation()" style="
+    background:#fff; border-radius:20px;
+    max-width:360px; width:88%; margin:0 16px;
+    overflow:hidden; box-shadow:0 12px 48px rgba(0,0,0,0.5);
+    animation: popIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  ">
+    <div style="height:5px; background:linear-gradient(90deg,#f0a050,#e05a78);"></div>
+    <div style="padding:20px 20px 16px;">
+      <div style="font-size:11px; color:#8896b8; letter-spacing:0.15em; margin-bottom:6px;">🎲 今夜のお店</div>
+      <div id="rndName" style="font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; color:#1a1f3a; margin-bottom:4px;"></div>
+      <div id="rndArea" style="font-size:12px; color:#6b7a99; margin-bottom:14px;"></div>
+      <div id="rndDesc" style="font-size:13px; color:#44516b; line-height:1.6; margin-bottom:14px;"></div>
+      <div id="rndInfo" style="background:#f8f9fc; border-radius:10px; padding:10px 12px; font-size:12px; color:#2a3558; line-height:1.8; margin-bottom:16px;"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+        <button onclick="pickRandom()" style="padding:10px; border:none; border-radius:10px; background:#1a1f3a; color:#f0a050; font-family:'Noto Sans JP',sans-serif; font-size:12px; font-weight:700; cursor:pointer;">🎲 もう一度</button>
+        <button onclick="closeRandom()" style="padding:10px; border:none; border-radius:10px; background:#f0a050; color:#1a1f3a; font-family:'Noto Sans JP',sans-serif; font-size:12px; font-weight:700; cursor:pointer;">✓ これにする！</button>
+      </div>
+      <a id="rndTelBtn" href="#" style="display:block; text-align:center; padding:10px; background:#eef0ff; color:#3040a0; text-decoration:none; font-family:'Noto Sans JP',sans-serif; font-size:12px; font-weight:700; border-radius:10px;">📞 電話する</a>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes popIn {
+  from { transform: scale(0.85); opacity:0; }
+  to   { transform: scale(1);    opacity:1; }
+}
+</style>
 
 <!-- GRID -->
 <div class="grid" id="grid">
@@ -1287,6 +1336,355 @@
     </div>
   </div>
 
+
+  <!-- 19: 大衆酒場 パーラーヒバリ -->
+  <div class="card" data-area="下通" data-tags="lively adult smoke-ok">
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">大衆酒場 パーラーヒバリ</div>
+        <div class="card-budget">〜¥2,000</div>
+      </div>
+      <div class="card-area">新市街（銀杏南通り・新市街バナービル1F）</div>
+      <div class="card-info">
+        <div class="info-item full">
+          <span class="info-label">⏰ 営業時間</span>
+          <span class="info-value">11:30〜翌0:00　金・土・祝前 11:00〜翌1:00</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📅 定休日</span>
+          <span class="info-value">不定休</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📞 電話</span>
+          <span class="info-value">096-322-1212</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🚬 喫煙</span>
+          <span class="smoke-badge smoke-ok"><svg class="smoke-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 煙草の本体（細長い白い棒） -->
+  <rect x="2" y="9" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.9"/>
+  <!-- フィルター部分（少し濃い） -->
+  <rect x="13" y="9" width="3" height="3" rx="1" fill="currentColor"/>
+  <!-- 火のついた先端 -->
+  <circle cx="2.5" cy="10.5" r="1" fill="#ff7730" opacity="0.9"/>
+  <!-- 煙のライン1 -->
+  <path d="M1 8 Q2.5 5.5 1.5 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- 煙のライン2 -->
+  <path d="M3 8 Q4.5 5 3.5 2.5" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.35"/>
+</svg> 喫煙可</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🍅 スライストマト</span>
+          <span class="tomato-badge tomato-unk">不明</span>
+        </div>
+      </div>
+      <div class="card-desc">「昼から呑めるなんて人生最高だ。」がキャッチコピーの昼飲みOKなセンベロ聖地。3杯1,100円セットや黒毛和牛すじ大根・モツ煮込みなどの一品料理がリーズナブルに揃う。常連多めの温かい雰囲気で一人飲みにも最適。</div>
+      <div class="tags">
+        <span class="tag tag-lively">センベロ</span>
+        <span class="tag tag-adult">一人飲みOK</span>
+      </div>
+      <div class="card-scenes"><strong>おすすめシーン：</strong>昼飲み・一人飲み・サク飲み・〆の一杯</div>
+      <div class="card-links">
+        <a class="card-link map" href="https://maps.google.com/?q=熊本市中央区新市街1-12+新市街バナービル1F+パーラーヒバリ" target="_blank">🗺 Googleマップ</a>
+        <a class="card-link tel" href="tel:0963221212">📞 電話する</a>
+        <a class="card-link full" href="https://www.hotpepper.jp/strJ001234757/" target="_blank">ホットペッパーで詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 20: 大衆並木酒場 ミツバチ -->
+  <div class="card" data-area="並木坂" data-tags="lively fish adult smoke-ok">
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">大衆並木酒場 ミツバチ</div>
+        <div class="card-budget">〜¥3,000</div>
+      </div>
+      <div class="card-area">並木坂（城東町・Lien上通1F）</div>
+      <div class="card-info">
+        <div class="info-item full">
+          <span class="info-label">⏰ 営業時間</span>
+          <span class="info-value">月〜木・日・祝 17:00〜翌1:00　金・土・祝前 17:00〜翌3:00</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📅 定休日</span>
+          <span class="info-value">不定休</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📞 電話</span>
+          <span class="info-value">096-288-0991</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🚬 喫煙</span>
+          <span class="smoke-badge smoke-ok"><svg class="smoke-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 煙草の本体（細長い白い棒） -->
+  <rect x="2" y="9" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.9"/>
+  <!-- フィルター部分（少し濃い） -->
+  <rect x="13" y="9" width="3" height="3" rx="1" fill="currentColor"/>
+  <!-- 火のついた先端 -->
+  <circle cx="2.5" cy="10.5" r="1" fill="#ff7730" opacity="0.9"/>
+  <!-- 煙のライン1 -->
+  <path d="M1 8 Q2.5 5.5 1.5 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- 煙のライン2 -->
+  <path d="M3 8 Q4.5 5 3.5 2.5" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.35"/>
+</svg> 喫煙可</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🍅 スライストマト</span>
+          <span class="tomato-badge tomato-unk">不明</span>
+        </div>
+      </div>
+      <div class="card-desc">並木坂にひっそり佇む大衆酒場ナナツバの姉妹店。単品250円〜と良心的な価格で旬の刺身・炭火焼き・牡蠣など110品以上が揃う。和モダンなお洒落空間で女子会や二次会にも人気。ハッピーアワーは毎日開催。</div>
+      <div class="tags">
+        <span class="tag tag-lively">賑やか</span>
+        <span class="tag tag-fish">刺身・牡蠣</span>
+        <span class="tag tag-adult">和モダン</span>
+      </div>
+      <div class="card-scenes"><strong>おすすめシーン：</strong>仕事帰り・女子会・二次会・サク飲み</div>
+      <div class="card-links">
+        <a class="card-link map" href="https://maps.google.com/?q=熊本市中央区城東町5-41+Lien上通1F+大衆並木酒場ミツバチ" target="_blank">🗺 Googleマップ</a>
+        <a class="card-link tel" href="tel:0962880991">📞 電話する</a>
+        <a class="card-link full" href="https://www.hotpepper.jp/strJ003411220/" target="_blank">ホットペッパーで詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 21: 熊本郷土料理 酒ト肴 もなか -->
+  <div class="card" data-area="駕町" data-tags="private local adult sake alldrink smoke-ok">
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">熊本郷土料理 酒ト肴 もなか</div>
+        <div class="card-budget">〜¥5,000</div>
+      </div>
+      <div class="card-area">駕町（下通1-6-12 2F・ホルモンマン上）</div>
+      <div class="card-info">
+        <div class="info-item full">
+          <span class="info-label">⏰ 営業時間</span>
+          <span class="info-value">全日 17:00〜翌0:00（料理L.O. 23:30）</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📅 定休日</span>
+          <span class="info-value">無休（日祝の翌月曜休あり）</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📞 電話</span>
+          <span class="info-value">096-354-3488</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🚬 喫煙</span>
+          <span class="smoke-badge smoke-ok"><svg class="smoke-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 煙草の本体（細長い白い棒） -->
+  <rect x="2" y="9" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.9"/>
+  <!-- フィルター部分（少し濃い） -->
+  <rect x="13" y="9" width="3" height="3" rx="1" fill="currentColor"/>
+  <!-- 火のついた先端 -->
+  <circle cx="2.5" cy="10.5" r="1" fill="#ff7730" opacity="0.9"/>
+  <!-- 煙のライン1 -->
+  <path d="M1 8 Q2.5 5.5 1.5 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- 煙のライン2 -->
+  <path d="M3 8 Q4.5 5 3.5 2.5" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.35"/>
+</svg> 喫煙可</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🍅 スライストマト</span>
+          <span class="tomato-badge tomato-unk">不明</span>
+        </div>
+      </div>
+      <div class="card-desc">馬刺しを一頭買いで仕入れる本気の郷土料理居酒屋。庵治石を使ったオープンキッチンにカウンター・ロフト・完全個室を完備。お通しには熊本県産野菜のバーニャカウダーが登場する心憎い演出も。接待から宴会まで幅広く対応。</div>
+      <div class="tags">
+        <span class="tag tag-private">個室あり</span>
+        <span class="tag tag-local">馬刺し一頭買い</span>
+        <span class="tag tag-adult">大人の雰囲気</span>
+        <span class="tag tag-alldrink">飲み放題コースあり</span>
+      </div>
+      <div class="card-scenes"><strong>おすすめシーン：</strong>接待・宴会・熊本をとことん味わいたい夜</div>
+      <div class="card-links">
+        <a class="card-link map" href="https://maps.google.com/?q=熊本市中央区下通1-6-12+2F+酒ト肴もなか" target="_blank">🗺 Googleマップ</a>
+        <a class="card-link tel" href="tel:0963543488">📞 電話する</a>
+        <a class="card-link full" href="https://www.hotpepper.jp/strJ000579289/" target="_blank">ホットペッパーで詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 22: 白のハコ 駕町店 -->
+  <div class="card" data-area="駕町" data-tags="private adult photo alldrink smoke-ok">
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">白のハコ 駕町店</div>
+        <div class="card-budget">〜¥4,000</div>
+      </div>
+      <div class="card-area">駕町（安政町2-27 セネタースビル2F）</div>
+      <div class="card-info">
+        <div class="info-item full">
+          <span class="info-label">⏰ 営業時間</span>
+          <span class="info-value">火〜木・日・祝 18:00〜翌0:00　金・土・祝前 18:00〜翌1:00</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📅 定休日</span>
+          <span class="info-value">月曜</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📞 電話</span>
+          <span class="info-value">096-326-8060</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🚬 喫煙</span>
+          <span class="smoke-badge smoke-ok"><svg class="smoke-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 煙草の本体（細長い白い棒） -->
+  <rect x="2" y="9" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.9"/>
+  <!-- フィルター部分（少し濃い） -->
+  <rect x="13" y="9" width="3" height="3" rx="1" fill="currentColor"/>
+  <!-- 火のついた先端 -->
+  <circle cx="2.5" cy="10.5" r="1" fill="#ff7730" opacity="0.9"/>
+  <!-- 煙のライン1 -->
+  <path d="M1 8 Q2.5 5.5 1.5 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- 煙のライン2 -->
+  <path d="M3 8 Q4.5 5 3.5 2.5" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.35"/>
+</svg> 喫煙可</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🍅 スライストマト</span>
+          <span class="tomato-badge tomato-unk">不明</span>
+        </div>
+      </div>
+      <div class="card-desc">一面真っ白な店内が印象的な「かまくら個室」が名物の居酒屋。創作洋食料理と和食が融合したメニュー構成で、白いだし巻き玉子や手作りシカゴピザなどユニークな一品も揃う。デートや女子会から宴会まで幅広く対応。</div>
+      <div class="tags">
+        <span class="tag tag-private">かまくら個室</span>
+        <span class="tag tag-adult">おしゃれ</span>
+        <span class="tag tag-photo">映えメニュー</span>
+        <span class="tag tag-alldrink">飲み放題</span>
+      </div>
+      <div class="card-scenes"><strong>おすすめシーン：</strong>デート・女子会・宴会・二次会</div>
+      <div class="card-links">
+        <a class="card-link map" href="https://maps.google.com/?q=熊本市中央区安政町2-27+セネタースビル2F+白のハコ駕町店" target="_blank">🗺 Googleマップ</a>
+        <a class="card-link tel" href="tel:0963268060">📞 電話する</a>
+        <a class="card-link full" href="https://www.hotpepper.jp/strJ001184813/" target="_blank">ホットペッパーで詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 23: 白のハコ 西銀座通り店 -->
+  <div class="card" data-area="下通" data-tags="private adult photo alldrink smoke-ok">
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">白のハコ 西銀座通り店</div>
+        <div class="card-budget">〜¥4,000</div>
+      </div>
+      <div class="card-area">下通（新市街3-5 コマドリビル3F）</div>
+      <div class="card-info">
+        <div class="info-item full">
+          <span class="info-label">⏰ 営業時間</span>
+          <span class="info-value">月〜木・日・祝 18:00〜翌0:00　金・土・祝前 18:00〜翌1:00</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📅 定休日</span>
+          <span class="info-value">不定休</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📞 電話</span>
+          <span class="info-value">096-240-2587</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🚬 喫煙</span>
+          <span class="smoke-badge smoke-ok"><svg class="smoke-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 煙草の本体（細長い白い棒） -->
+  <rect x="2" y="9" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.9"/>
+  <!-- フィルター部分（少し濃い） -->
+  <rect x="13" y="9" width="3" height="3" rx="1" fill="currentColor"/>
+  <!-- 火のついた先端 -->
+  <circle cx="2.5" cy="10.5" r="1" fill="#ff7730" opacity="0.9"/>
+  <!-- 煙のライン1 -->
+  <path d="M1 8 Q2.5 5.5 1.5 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- 煙のライン2 -->
+  <path d="M3 8 Q4.5 5 3.5 2.5" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.35"/>
+</svg> 喫煙可</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🍅 スライストマト</span>
+          <span class="tomato-badge tomato-unk">不明</span>
+        </div>
+      </div>
+      <div class="card-desc">駕町店の姉妹店。72席の広々とした空間にかまくら個室を11室完備。シカゴピザ・パスタ付き女子会コースや黒毛和牛ステーキ付きコースが人気。下通アーケードから西銀座通りに入ってすぐのアクセスの良さも魅力。</div>
+      <div class="tags">
+        <span class="tag tag-private">かまくら個室</span>
+        <span class="tag tag-adult">おしゃれ</span>
+        <span class="tag tag-photo">映えメニュー</span>
+        <span class="tag tag-alldrink">飲み放題</span>
+      </div>
+      <div class="card-scenes"><strong>おすすめシーン：</strong>デート・女子会・宴会・二次会</div>
+      <div class="card-links">
+        <a class="card-link map" href="https://maps.google.com/?q=熊本市中央区新市街3-5+コマドリビル3F+白のハコ西銀座通り店" target="_blank">🗺 Googleマップ</a>
+        <a class="card-link tel" href="tel:0962402587">📞 電話する</a>
+        <a class="card-link full" href="https://www.hotpepper.jp/strJ001209650/" target="_blank">ホットペッパーで詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 24: ごきげん家G.O -->
+  <div class="card" data-area="下通" data-tags="private local adult fish alldrink smoke-ok">
+    <div class="card-accent-bar"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">ごきげん家 G.O</div>
+        <div class="card-budget">〜¥4,000</div>
+      </div>
+      <div class="card-area">下通（下通1-6-19 カーナA2ビル1F）</div>
+      <div class="card-info">
+        <div class="info-item full">
+          <span class="info-label">⏰ 営業時間</span>
+          <span class="info-value">17:00〜翌0:00</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📅 定休日</span>
+          <span class="info-value">不定休</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">📞 電話</span>
+          <span class="info-value">096-328-8288</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🚬 喫煙</span>
+          <span class="smoke-badge smoke-ok"><svg class="smoke-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 煙草の本体（細長い白い棒） -->
+  <rect x="2" y="9" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.9"/>
+  <!-- フィルター部分（少し濃い） -->
+  <rect x="13" y="9" width="3" height="3" rx="1" fill="currentColor"/>
+  <!-- 火のついた先端 -->
+  <circle cx="2.5" cy="10.5" r="1" fill="#ff7730" opacity="0.9"/>
+  <!-- 煙のライン1 -->
+  <path d="M1 8 Q2.5 5.5 1.5 3" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <!-- 煙のライン2 -->
+  <path d="M3 8 Q4.5 5 3.5 2.5" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.35"/>
+</svg> 喫煙可</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">🍅 スライストマト</span>
+          <span class="tomato-badge tomato-unk">不明</span>
+        </div>
+      </div>
+      <div class="card-desc">ホットペッパー評点★4.7の人気居酒屋。厚切りの刺盛りや馬刺し・あそび豚ロース炭火焼きなど熊本名物がズラリと並ぶ。でんでん太鼓で店員を呼ぶユニークなスタイルも名物。接客の良さと料理のコスパが口コミで高評価。</div>
+      <div class="tags">
+        <span class="tag tag-private">個室あり</span>
+        <span class="tag tag-local">熊本名物</span>
+        <span class="tag tag-fish">刺身・馬刺し</span>
+        <span class="tag tag-alldrink">飲み放題</span>
+      </div>
+      <div class="card-scenes"><strong>おすすめシーン：</strong>女子会・友人との飲み会・宴会</div>
+      <div class="card-links">
+        <a class="card-link map" href="https://maps.google.com/?q=熊本市中央区下通1-6-19+カーナA2ビル1F+ごきげん家GO" target="_blank">🗺 Googleマップ</a>
+        <a class="card-link tel" href="tel:0963288288">📞 電話する</a>
+        <a class="card-link full" href="https://www.hotpepper.jp/strJ000963775/" target="_blank">ホットペッパーで詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+
 </div><!-- /grid -->
 
 <footer>
@@ -1295,6 +1693,56 @@
 </footer>
 
 <script>
+
+  function pickRandom() {
+    const cards = Array.from(document.querySelectorAll('.card')).filter(c => c.style.display !== 'none');
+    if (!cards.length) return;
+    const card = cards[Math.floor(Math.random() * cards.length)];
+    const name  = card.querySelector('.card-name')?.innerText || '';
+    const area  = card.querySelector('.card-area')?.innerText || '';
+    const desc  = card.querySelector('.card-desc')?.innerText || '';
+    const hours = card.querySelector('.info-value')?.innerText || '';
+    const tel   = [...card.querySelectorAll('.info-value')].find(el => el.innerText.match(/\d{2,4}-\d{3,4}-\d{4}/))?.innerText || '—';
+    document.getElementById('rndName').innerText = name;
+    document.getElementById('rndArea').innerText = area;
+    document.getElementById('rndDesc').innerText = desc;
+    document.getElementById('rndInfo').innerHTML =
+      '⏰ ' + hours + '<br>📞 ' + tel;
+    const overlay = document.getElementById('randomOverlay');
+    overlay.style.display = 'flex';
+  }
+  function closeRandom() {
+    document.getElementById('randomOverlay').style.display = 'none';
+  }
+
+  function pickRandom() {
+    const cards = Array.from(document.querySelectorAll('.card')).filter(c => c.style.display !== 'none');
+    if (!cards.length) return;
+    const card = cards[Math.floor(Math.random() * cards.length)];
+    const name  = card.querySelector('.card-name')?.innerText || '';
+    const area  = card.querySelector('.card-area')?.innerText || '';
+    const desc  = card.querySelector('.card-desc')?.innerText || '';
+    const hours = card.querySelector('.info-value')?.innerText || '';
+    const tel   = [...card.querySelectorAll('.info-value')].find(el => el.innerText.match(/\d{2,4}-\d{3,4}-\d{4}/))?.innerText || '—';
+    document.getElementById('rndName').innerText = name;
+    document.getElementById('rndArea').innerText = area;
+    document.getElementById('rndDesc').innerText = desc;
+    document.getElementById('rndInfo').innerHTML = '⏰ ' + hours + '<br>📞 ' + tel;
+    const telRaw = tel.replace(/-/g, '');
+    const telBtn = document.getElementById('rndTelBtn');
+    if (tel !== '—') {
+      telBtn.href = 'tel:' + telRaw;
+      telBtn.style.display = 'block';
+    } else {
+      telBtn.style.display = 'none';
+    }
+    const overlay = document.getElementById('randomOverlay');
+    overlay.style.display = 'flex';
+  }
+  function closeRandom() {
+    document.getElementById('randomOverlay').style.display = 'none';
+  }
+
   function filterCards(key, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
